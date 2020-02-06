@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴效果</title>
+	<style>
+		h1{width: 400px;height: 30px;background-color: #585858;text-align: center;font-size: 18px;margin: 0;border: 1px solid black;}
+		p{width: 400px;height: 100px;background: #9A9090;margin: 0;display: none}
+	</style>
+</head>
+
+<body>
+    <h1>标题1</h1>
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	<h1>标题2</h1>
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	<h1>标题3</h1>
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	<h1>标题4</h1>
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	<h1>标题5</h1>
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容
+	内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+	
+</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(function(){
+			$("p").first().show()
+			$("h1").click(function(){
+				$(this).next("p").slideToggle().siblings("P").slideUp()
+			})
+		})
+	</script>
+</html>

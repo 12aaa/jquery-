@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴，折叠菜单</title>
+	<style>
+		.btn{width: 150px;height: 40px;background-color: #665F5F;color: black; margin-bottom: 10px;cursor: pointer}
+		.neir{width: 500px;height: 200px;border: 1px red solid;display: none}
+	</style>
+</head>
+
+<body>
+	<div class="btn box1">显示</div>
+	<div class="btn box2">隐藏</div>
+	<div class="btn box3">切换</div>
+	<div class="neir">
+	的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟的风格和零四劳动工具零三分剧历史记录说的话v十六分十六的v联发科v你到了混个脸熟</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	$(".box1").click(function(){
+		//$(".neir").css("display","block")
+		//$(".neir").show()
+		//$(".neir").fadeIn()
+		//$(".neir").slideDown()
+	})
+	$(".box2").click(function(){
+		//$(".neir").css("display","none")
+		//$(".neir").hide()
+		//$(".neir").fadeOut()
+		//$(".neir").slideUp()
+	})
+	$(".box3").click(function(){
+		//$(".neir").toggle()
+		//$(".neir").fadeToggle()
+		$(".neir").slideToggle()
+	})
+
+})	
+</script>
+</html>

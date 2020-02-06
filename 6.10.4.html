@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滚动条知识点</title>
+<!--windom:是对窗口操作-->
+<style>
+		*{padding: 0;margin: 0}
+	.top{width: 100px;height: 100px;background-color: black;color: #FF0004;font-size: 40px;text-align: center;line-height: 2em;position: fixed;bottom: 100px;right: 60px;display: none;cursor: pointer;}
+	.daohan{width: 40px;height: 200px;position:fixed;left: 60px;bottom: 200px;}
+	.daohan .btn{width: 40px;height: 50px;background-color: #333;text-align: center;line-height: 2em;cursor: pointer}
+	.btn .on{background-color: red;}
+    </style>
+</head>
+
+<body>
+	<div class="top">↑</div>
+	<div class="daohan">
+	    <div class="btn">1</div>
+	    <div class="btn">2</div>
+		<div class="btn">3</div>
+		<div class="btn">4</div>
+	</div>
+	<div class="box" style="height: 600px;background-color: red">11111</div>
+	<div class="box" style="height: 600px;background-color: yellow">22222</div>
+	<div class="box" style="height: 600px;background-color: blue">33333</div>
+	<div class="box" style="height: 600px;background-color: green">44444</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	var i=0
+	
+	$(window).scroll(function(){
+		var st=$(window).scrollTop()
+		if(st>=300){
+			$(".top").show()
+		}else{
+			$(".top").hide()
+		}
+		
+		
+	})
+	$(".top").click(function(){
+		$("html").animate({scrollTop:0},300)
+	})
+	
+	$(".daohan .btn").click(function(){
+		var idx=$(this).index()
+		var boxT=$(".box").eq(idx).offset().top
+		$("body,html").animate({scrollTop:boxT})
+	})
+	$(".box").each(function(i){
+		var ft=$(".box").eq(i).offset().top;
+		var st=$(window).scrollTop()
+		if(st>ft){
+			$(".btn").eq(i).addClass("on").siblings().removeClass("on")
+		}
+	})
+})	
+</script>
+</html>

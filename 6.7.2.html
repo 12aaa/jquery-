@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京东选项卡</title>
+<style>
+	*{padding: 0;margin: 0}	
+	ul,ol{list-style: none}
+	.banner{width: 590px;height: 470px;border: 1px solid green;margin: 0 auto;position: relative}
+	.banner .pic li {position: absolute;top: 0;left: 0;display: none}
+	.banner .pic li img{width: 590px;height: 470px;}
+	.banner .num{position: absolute;bottom: 20px;left: 30%}
+	.banner .num li{width: 20px;height: 20px;background-color:#020202;float: left;border-radius: 50%;margin-left: 5px}
+</style>
+</head>
+
+<body>
+    <div class="banner">
+	    <ul class="pic">
+			<li><a href="#"><img src="image/京东1.jpg.webp" alt="图片无法显示" /></a></li>
+		    <li><a href="#"><img src="image/京东2.jpg.webp" alt="图片无法显示"/></a></li>
+		    <li><a href="#"><img src="image/京东3.jpg.webp" alt="图片无法显示"/></a></li>
+			<li><a href="#"><img src="image/京东4.jpg" alt="图片无法显示"/></a></li>
+            <li><a href="#"><img src="image/京东5.jpg.webp" alt="图片无法显示"/></a></li>
+			<li><a href="#"><img src="image/京东6.jpg.webp" alt="图片无法显示"/></a></li>
+			<li><a href="#"><img src="image/京东7.jpg.webp" alt="图片无法显示"/></a></li>
+			<li><a href="#"><img src="image/京东8.jpg.webp" alt="图片无法显示"/></a></li>
+					
+		</ul>
+		<ol class="num">
+		    <li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	$(".pic li").eq(0).show()
+	$(".num li").eq(0).css("background","red")
+	$(".num li").mouseover(function(){
+		$(this).css("background","red").siblings(".num li").css("background","#020202")
+		var idx=$(this).index()
+		$(".pic li").eq(idx).fadeIn().siblings(".pic li").fadeOut()
+	})
+})
+</script>
+</html>

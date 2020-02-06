@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery导航条</title>
+	<style>
+	*{padding: 0;margin: 0}
+		a{text-decoration: none}
+		ul{list-style: none}
+		.nav{width: 100%;height: 40px;background-color: #333}
+		.nav ul{width: 1000px;border: 1px solid green;margin: 0 auto;}
+		.nav li{float: left;padding: 0 40px;line-height: 2em;position: relative}
+		.nav li > a{color: white;display: block;width: 100px;height: 40px; text-align: center}
+		.nav li:hover >a{background: #989595}
+		.select{background-color: #494949;display: none;position: absolute;}
+		.select a{display: block;color: white;width: 150px;padding: 0 20px;}
+		/*.nav li:hover .select{display: block}
+		.select a:hover {background-color: #CFCFCF}*/
+		/*.btn{width: 100px;height: 40px;background-color: blue}*/
+	</style>
+</head>
+
+<body>
+	<div class="btn">按钮</div>
+	<div class="nav">
+	     <ul>
+		     <li>
+				 <a href="#">关于我们</a>
+				 <div class="select">
+				     <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+				 </div>
+			 </li>
+			 <li><a href="#">电击方块</a>
+			 <div class="select">
+				     <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+				 </div></li>
+			 <li><a href="#">卡夫卡的</a>
+			 <div class="select">
+				     <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+				 </div></li>
+			 <li><a href="#">大夫李洁</a>
+			 <div class="select">
+				     <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+					 <a href="#">法律后果时间</a>
+				 </div></li>
+		 
+		</ul>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	//$(".btn").mouseover(function(){
+//		$(this).html("移上来了")
+//	})
+//	$(".btn").mouseout(function(){
+//		$(this).html("移下来了")
+//	})
+	//$(".btn").hover(function(){
+//		alert(123)
+//	},function(){})
+	$(".nav li").hover(function(){
+		$(this).find(".select").slideDown()
+	},function(){
+		$(this).find(".select").slideUp()
+	})
+})	
+</script>
+</html>

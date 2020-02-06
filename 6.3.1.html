@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出层细节</title>
+	<style>
+		/*cursor: pointer:鼠标移动小手的标志*/
+		*{padding: 0;margin: 0;}
+		body{background: url("image/1.jpg")}
+		.btn{width: 150px;height: 40px;background-color: blue;text-align: center;line-height: 2.2em;cursor: pointer}
+		.out{width: 400px;height: 400px;background-color:#817E7E;position: fixed;top: 50%;margin-top:-200px;left: 50%;margin-left: -200px;display: none;z-index: 9}
+		.out video{width: 400px;height: 400px;}
+		.close{width: 30px;height: 30px;background-color:#000000;text-align: center;color: white;font-size: 20px;position: absolute;right: -30px;top: 0;cursor: pointer;}
+		.back{width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(7,7,7,0.3);display: none;z-index: 8}
+	</style>
+</head>
+
+<body>
+	<div class="btn">登录</div>
+	<div class="out">
+	    <div class="close">×</div>
+		<iframe height=400 width=400 src='http://player.youku.com/embed/XNDQ0ODg0NjkwMA==' frameborder=0 'allowfullscreen'></iframe>
+	</div>
+	<div class="a" style="height: 1000px"></div>
+	<div class="back"></div>
+	<!--插入视频的方式：
+	一：插入本地视频
+	1mp4
+	2swf / flv
+    优势：无广告
+	缺点：打开速度比较慢
+    二：插入网络视频
+    1腾讯视频 优酷视频 土豆视频（优点：速度快 缺点有广告）
+    2淘宝视频
+    video.taobao.com
+    -->
+	
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	var video=$(".out iframe").attr("src")
+	$(".btn").click(function(){
+		$(".out,.back").css("display","block")
+		$(".out iframe").attr("src",video)
+	})
+	$(".close").click(function(){
+			$(".out,.back").css("display","none")
+		    $(".out iframe").attr("src","")
+		})
+	//$(.out).click(function(){
+//		$(.back).css("background","rgba(3,3,3,0.3)")
+//	})
+})	
+</script>
+</html>

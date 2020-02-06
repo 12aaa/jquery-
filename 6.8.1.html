@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单</title>
+<!--outline:none:去除轮廓样式-->
+<style>
+	/**{outline: none;}*/
+	.user{width: 400px;height: 40px;margin:100px ;border: 1px solid #333;padding: 10px;color:#666}	
+	.on{border-color:aqua;width: 400px;height: 40px;}
+</style>	
+</head>
+
+<body>
+	<input type="text" name="user" class="user" value="请输入用户名"/>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+$(function(){
+	//$(".user").click(function(){
+//		//$(this).css("border-color","blue")
+//		//$(this).addClass("on")
+//	})
+	$(".user").focus(function(){
+		$(this).addClass("on")
+		if($(this).val()=="请输入用户名"){
+			$(this).val(" ")
+		}
+		
+	}).blur(function(){
+		$(this).removeClass("on")
+		if($(this).val()==" "){
+		   $(this).val("请输入用户名")
+		   }
+	})
+})	
+	
+</script>	
+</html>

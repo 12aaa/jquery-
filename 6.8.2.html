@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搜索框</title>
+	<style>
+		*{padding: 0; margin: 0; outline: none;}
+		.out{width: 400px;height: 40px;margin:100px auto;position: relative;overflow: hidden}
+		.user{width: 380px;height: 39px;margin:auto;border: none;border-bottom: 1px solid #333;padding-left: 20px;position: absolute;top: 0;right:-400px;}
+		.suo{width: 30px;height: 30px;position: absolute;top: 0;left: 370px;cursor: pointer}
+		.suo img{width: 30px;height: 30px;display: inline-block}
+	</style>
+</head>
+
+<body>
+	<div class="out">
+	<input type="text" nane="user" class="user"/>
+	<div class="suo">
+	<img src="image/sousuo (1).png" alt="图片无法显示"/>
+	</div>
+	</div>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$(".suo img").mouseover(function(){
+			$(".user").animate({right:0},400)
+			setTimeout(function(){
+				$(".user").focus()
+			},500)
+			if($(".user").val() ==" "){
+			    $(".user").blur(function(){
+				    $(".user").animate({right:-400},400)
+			})
+			}
+		})
+		
+	})
+</script>
+</html>
